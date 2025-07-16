@@ -14,7 +14,6 @@ export class UserService {
     private prismaService: PrismaService,
   ) {}
   async register(request: RegisterRequest): Promise<UserResponse> {
-    this.logger.info('Registering user');
     const data: RegisterRequest = this.validationService.validate(
       UserValidation.REGISTER,
       request,
